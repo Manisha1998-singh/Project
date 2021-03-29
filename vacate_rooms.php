@@ -47,7 +47,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">BTKIT <span class="display"> DWARAHAT</span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -84,16 +84,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="contact.php">Contact</a>
 					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="profile.php">My Profile</a>
+							<li class="nav-item">
+								<a class="nav-link"  href="profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a class="nav-link"  href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -106,13 +101,7 @@
 </div>
 
 <br><br><br>
-<?php
-   $hostel_id = $_SESSION['hostel_id'];
-   $query1 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-   $result1 = mysqli_query($conn,$query1);
-   $row1 = mysqli_fetch_assoc($result1);
-   $hostel_name = $row1['Hostel_name'];
-?>
+
 
 <section class="contact py-5">
 	<div class="container">
@@ -125,7 +114,7 @@
 								<input type="text" name="roll_no" placeholder="Roll Number" required >
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $hostel_name;?>" required="" disabled="disabled">
+								<input type="text" name="hostel" placeholder="Hostel"  required >
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="number" name="room_no" placeholder="Room Number" required="">
@@ -147,6 +136,7 @@ if(isset($_POST['submit'])){
      $hostel = $_POST['hostel'];
      $room_number =(int)$_POST['room_no'];
 
+	 
     $query2 = "SELECT * FROM Room WHERE Hostel_id = '$hostel_id' and Room_No = '$room_number'";
     $result2 = mysqli_query($conn,$query2);
     if(mysqli_num_rows($result2)==0){
@@ -194,7 +184,7 @@ if(isset($_POST['submit'])){
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+			<a class="navbar-brand" href="index.html">BTKIT<span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			<div class="social mb-4 text-center">
@@ -226,7 +216,7 @@ if(isset($_POST['submit'])){
 				</ul>
 			</div>
 			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+				<p>© 2020 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
 		</div>
 		</div>
 	</div>

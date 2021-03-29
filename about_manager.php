@@ -78,16 +78,12 @@
 					<li class="nav-item">
 						<a class="nav-link" href="contact.php">Contact</a>
 					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="profile.php">My Profile</a>
+					
+							<li class="nav-item">
+								<a  class="nav-link"href="profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a class="nav-link" href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -244,24 +240,24 @@
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
+						<a href="services.php">Services</a>
 					</li>
 					<li>
-						<a href="projects.html">Gallery</a>
+						<a href="projects.php">Gallery</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</div>
 			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+				<p>© 2020  All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> Manisha Singh </a></p>
 		</div>
 		</div>
 	</div>

@@ -6,6 +6,42 @@
 <html lang="en">
 <head>
 <title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Contact : W3layouts</title>
+<style> 
+        table, th, td { 
+            border: 4px solid black; 
+            border-collapse: collapse; 
+        } 
+          
+        th, td { 
+            padding: 5px; 
+            text-align: left; 
+        } 
+
+		th { 
+            background-color: #000000;
+			
+        }
+
+		td { 
+            font-weight: bold;
+			color: black;
+        }  
+
+		h2 { 
+            font-weight: bold;
+			color: black;
+        }  
+          
+        .center {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%; 
+            background-color: #F5F5F5; 
+			align: center;
+           } 
+    </style> 
+
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,10 +107,10 @@
 						<li class="nav-item">
 							<a class="nav-link" href="services.php">Hostels</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active">
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
 						
@@ -95,34 +131,44 @@
 	<!--Header-->
 </div>
 <!-- //banner --> 
+<br>
+<br>
 
-<?php
-    $roll_no = $_SESSION['roll'];
-    $query = "SELECT * FROM Message WHERE receiver_id ='$roll_no'";
-    $result = mysqli_query($conn,$query);
 
-    while ($row = mysqli_fetch_assoc($result)){  
-    	$hostel_id = $row['hostel_id'];
-    	$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-          ?> 
+    
+    <h2 style="text-align:center; font-weight: bold;">Message By Warden </h2><br>
 
-    <div class="container">
-      <div class="card">
-      <div class="card-header"><b><?php echo $row['subject_h']; ?></b></div>
-      <div class="card-body"><?php echo $row['message']; ?></div> 
-      <div class="card-footer"><?php echo $hostel_name." Hostel Manager"; ?><span style="float: right"><?php echo $row['msg_date']." ".$row['msg_time']; ?></span></div>
-  </div>
-</div>
-<br><br>
-             
-    <?php
-    } 
 
-?>
-
+<table class="center">
+  <thead>
+	<tr>
+	  <th style="color:White;">Name</th>
+	  <th style="color:White;"><b>Course </b></th>
+	  <th style="color:White;"><b>Year </b></th>
+	  <th style="color:White;"><b>Hostel </b></th>
+	  <th style="color:White;"><b>Message </b></th>
+	  
+	  
+	</tr>
+  </thead>
+  <tbody>
+  <?php
+			
+			
+		  $sql = "SELECT  Name, Course, Year, Hostel_id, Message FROM applicable ";
+		  $result = mysqli_query($conn,$sql);
+		  
+		  if($result->num_rows > 0){
+			  while($row = $result -> fetch_assoc()){
+				  echo "<tr><td>". $row["Name"] ."</td><td>". $row["Course"] ."</td><td>". $row["Year"]."</td><td>". $row["Hostel_id"]."</td><td>". $row["Message"]."</td></tr>\n";
+				
+			  }
+			  echo "</table>";
+		  }
+		
+  ?>
+  </tbody>
+</table>
 <br>
 <br>
 

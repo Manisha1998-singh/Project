@@ -57,11 +57,10 @@
 			</button>
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="home_manager.php">Home <span class="sr-only">(current)</span></a>
-					</li>
+					
+
 					<li class="nav-item">
-						<a class="nav-link" href="allocate_room.php">Allocate Rooms</a>
+						<a class="nav-link" href="admin/students.php">Students</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="message_hostel_manager.php">Messages Received</a>
@@ -85,16 +84,12 @@
 					<li class="nav-item">
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+					
+							<li class="nav-item">
+								<a class="nav-link" href="admin/manager_profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a  class="nav-link" href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>

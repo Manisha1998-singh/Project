@@ -1,10 +1,5 @@
 
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 
 <?php
 
@@ -52,7 +47,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home_manager.php">BTKIT <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -85,16 +80,14 @@
 						<li class="nav-item active">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
-						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+					
+					<li class="nav-item">
+							<li >
+								<a class="nav-link" href="admin/manager_profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+					<li class="nav-item">
+							<li >
+								<a  class="nav-link" href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -108,11 +101,11 @@
 </div>
 <!-- //banner --> 
 <?php
-$hostel_id = $_SESSION['hostel_id'];
-$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
+$hostel_id = $_SESSION['Hostel_id'];
+$query = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
+       $result = mysqli_query($conn,$query);
+       $row = mysqli_fetch_assoc($result);
+       $hostel_name = $row['Hostel_name'];
 ?>
 <!-- contact -->
 <section class="contact py-5">
@@ -123,7 +116,7 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
+								<input type="text" name="name" placeholder="Name"  value="<?php echo $hostel_id; ?>"required="">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
@@ -155,7 +148,7 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="https://kecua.ac.in/" target="_blank">BTKIT <span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			
@@ -230,15 +223,15 @@ if(isset($_POST['submit'])){
 	/*echo "<script type='text/javascript'>alert('hello')</script>";*/
 	$subject = $_POST['subject'];
 	$message = $_POST['message'];
-	$hostel_name = $_POST['hostel_name'];
-	$roll = $_POST['student_roll_no'];
+	$hostel_name = $_POST['Hostel_name'];
+	$roll = $_POST['Student_id'];
 
-    $man_id = $_SESSION['hostel_man_id'];
+    $man_id = $_SESSION['Hostel_man_id'];
 
     $today_date =  date("Y-m-d");
     $time = date("h:i A");
 
-	$query = "INSERT INTO Message (sender_id,receiver_id,hostel_id,subject_h,message,msg_date,msg_time) VALUES ('$man_id','$roll','$hostel_id','$subject','$message','$today_date','$time')";
+	$query = "INSERT INTO Message (sender_id,receiver_id,Hostel_id,subject,message,msg_date,msg_time) VALUES ('$man_id','$roll','$hostel_id','$subject','$message','$today_date','$time')";
     $result = mysqli_query($conn,$query);
     if($result){
          echo "<script type='text/javascript'>alert('Message sent Successfully!')</script>";

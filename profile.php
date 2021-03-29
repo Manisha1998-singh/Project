@@ -1,6 +1,7 @@
 <?php
 		  require 'includes/config.inc.php';
  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['Student_id']; ?>
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
@@ -117,37 +118,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 				<form id="formElem" name="formElem" action="#" method="post" class="w3_form w3l_form_fancy">
+			
+	
 					<fieldset class="step agileinfo w3ls_fancy_step">
 						<legend>Personal Info</legend>
 						<div class="abt-agile">
 							<div class="abt-agile-left">
 							</div>
 							<div class="abt-agile-right">
-
-								
+							<?php
+									
+									$sql = "SELECT * FROM Student WHERE Student_id = '1'";
+									$result = mysqli_query($conn, $sql);
+									if($row = mysqli_fetch_assoc($result))
+									{
+										$std_id = $row['Student_id'];
+										$fname = $row['Fname'];
+										$lname = $row['Lname'];
+										$Mob  = $row['Mob_no'];
+										$dept = $row['Dept'];
+										$year = $row['Year_of_study'];
+										
+									}
+									else {
+										$std_id = 'none';
+										$fname = 'none';
+										$lname  = 'none';
+										$Mob = 'none';
+										$dept  = 'none';
+										$year = 'none';
+									}
+								 ?>
+							   <h3><?php echo $fname." ".$lname; ?></h3>
 								<h5>Student</h5>
+								
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Roll No </b></li>
+											<li>: <?php echo $std_id; ?></li>
 											
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
+											<li>: <?php echo $Mob; ?></li>
 											
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>DEPT </b></li>
+											<li>: <?php echo $dept; ?></li>
 											
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>YEAR OF STUDY </b></li>
+											<li>: <?php echo $year; ?></li>
 											
 										</ul>
 									</li>
@@ -163,55 +193,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="abt-agile-right">
 
-							<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+						
 							<h5>Student</h5>
 							<ul class="address">
 								<li>
 									<ul class="address-text">
 										<li><b>HOSTEL </b></li>
-										<?php
-											$hostelId = $_SESSION['hostel_id'];
-											if($hostelId == NULL){
-												$hostelName = 'None';
-											}
-											else {
-												$sql = "SELECT * FROM Hostel WHERE Hostel_id = '$hostelId'";
-												$result = mysqli_query($conn, $sql);
-												if($row = mysqli_fetch_assoc($result)){
-													$hostelName = $row['Hostel_name'];
-												}
-												else {
-													echo "<script type='text/javascript'>alert('Foreign Key Error-hostenName!!')</script>";
-												}
-											}
-										 ?>
-
-
-										<li>: <?php echo $hostelName; ?></li>
+										
+										
 									</ul>
 								</li>
 								<li>
 									<ul class="address-text">
 										<li><b>ROOM NO </b></li>
-										<?php
-											$roomId = $_SESSION['room_id'];
-											if($hostelId == NULL || $roomId == NULL){
-												$roomNo = 'None';
-											}
-											else {
-												$sql = "SELECT * FROM Room WHERE Room_id = '$roomId'";
-												$result = mysqli_query($conn, $sql);
-												if($row = mysqli_fetch_assoc($result)){
-													$roomNo = $row['Room_No'];
-												}
-												else {
-													echo "<script type='text/javascript'>alert('Foreign Key Error-roomNo!!')</script>";
-												}
-											}
-										 ?>
-										<li>: <?php echo $roomNo; ?></li>
+										
 									</ul>
 								</li>
+										
+										
+					
 							</ul>
 						</div>
 							<div class="clear"></div>
@@ -279,21 +279,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="abt-agile-left">
 							</div>
 							<div class="abt-agile-right">
-								<?php
-									$Hid = $_SESSION['hostel_id'];
-									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = '$Hid'";
-									$result1 = mysqli_query($conn, $sql1);
-									if($row1 = mysqli_fetch_assoc($result1)){
-										$hmfname = $row1['Fname'];
-										$hmlname = $row1['Lname'];
-										$hmMob  = $row1['Mob_no'];
-										$hmemail = $row1['Email'];
+							<?php
+									
+									$sql = "SELECT * FROM Hostel_Manager";
+									$result = mysqli_query($conn, $sql);
+									if($row = mysqli_fetch_assoc($result))
+									{
+										$hmfname = $row['Fname'];
+										$hmlname = $row['Lname'];
+										$hmMob  = $row['Mob_no'];
+										
 									}
 									else {
 										$hmfname = 'none';
 										$hmlname = 'none';
 										$hmMob  = 'none';
-										$hmemail = 'none';
+										
 									}
 								 ?>
 								<h3><?php echo $hmfname." ".$hmlname; ?></h3>
@@ -305,12 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li>: <?php echo $hmMob; ?></li>
 										</ul>
 									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Email </b></li>
-											<li>: <?php echo $hmemail; ?></li>
-										</ul>
-									</li>
+									
 								</ul>
 							</div>
 								<div class="clear"></div>

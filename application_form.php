@@ -45,7 +45,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">BTKIT <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -64,16 +64,11 @@
 						<li class="nav-item">
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
-						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="profile.php">My Profile</a>
+							<li class="nav-item">
+								<a  class="nav-link" href="profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a  class="nav-link" href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -95,16 +90,16 @@
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Name" placeholder="Name" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="" disabled="disabled">
+								<input type="text" name="Name" placeholder="Name"  required="" >
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="roll_no" placeholder="Roll Number" value="<?php echo $_SESSION['roll']?>" required="" disabled="disabled">
+								<input type="text" name="Course" placeholder="Course"  required="" >
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $_GET['id']?>" required="" disabled="disabled">
+								<input type="text" name="Year" placeholder="Year" required="" >
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="password" name="pwd" placeholder="Password" required="">
+								<input type="text" name="Hostel_id" placeholder="Id" required="">
 							</div>
 						</div>
 						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
@@ -125,7 +120,7 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://nitc.ac.in" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="https://kecua.ac.in/" target="_blank">BTKIT <span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			
@@ -204,60 +199,32 @@
 </html>
 
 <?php
-   //echo 'Hello';
-   
-   if(isset($_POST['submit'])){
-     $roll = $_SESSION['roll'];
-     $password = $_POST['pwd'];
-     $hostel = $_GET['id'];
-     $message = $_POST['Message'];
+	 
+if(isset($_POST['submit'])){
 
-     /*echo "<script type='text/javascript'>alert('<?php echo $roll ?>')</script>";*/
-     $query_imp = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result_imp = mysqli_query($conn,$query_imp);
-     $row_imp = mysqli_fetch_assoc($result_imp);
-     $room_id = $row_imp['Room_id'];
-     /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
-     if(is_null($room_id)){
-     
-     $query_imp2 = "SELECT * FROM Application WHERE Student_id = '$roll'";
-     $result_imp2 = mysqli_query($conn,$query_imp2);
-     if(mysqli_num_rows($result_imp2)==0){
+	
+$name = $_POST["Name"];
+$course = $_POST["Course"];
+$year = $_POST["Year"];
+$hostel_id = $_POST["Hostel_id"];
+$message = $_POST["Message"];
+/*echo "<script type='text/javascript'>alert('hello')</script>";*/
 
 
-     $query = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result = mysqli_query($conn,$query);
-     if($row = mysqli_fetch_assoc($result)){
-     	$pwdCheck = password_verify($password, $row['Pwd']);
-     	
-        if($pwdCheck == false){
-            echo "<script type='text/javascript'>alert('Incorrect Password!!')</script>";
-      }
-      else if($pwdCheck == true) {
 
-      	    $query2 = "SELECT * FROM Hostel WHERE Hostel_name = '$hostel'";
-      	    $result2 = mysqli_query($conn,$query2);
-      	    $row2 = mysqli_fetch_assoc($result2);
-      	    $hostel_id = $row2['Hostel_id'];
-            $query3 = "INSERT INTO Application (Student_id,Hostel_id,Application_status,Message) VALUES ('$roll','$hostel_id',true,'$message')";
-            $result3 = mysqli_query($conn,$query3);
+$query = "INSERT INTO applicable(Name, Course, Year, Hostel_id,Message) VALUES ('$name','$course','$year' ,'$hostel_id' ,'$message')";
 
-            if($result3){
-            	 echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
-            }
-      }
-     }
+$result = mysqli_query($conn,$query);    
 
-     }
-     else{
-     	echo "<script type='text/javascript'>alert('You have Already applied for a Room')</script>";
-     }
-    
-     }
-     else{
-          echo "<script type='text/javascript'>alert('You have Already been alloted a Room')</script>";   
-      }
-
-
+if($result){
+	echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
 }
+
+else{
+	echo "<script type='text/javascript'>alert('Application sent error')</script>";
+}
+
+//if(!empty($insert_id)) {
+}
+
 ?>

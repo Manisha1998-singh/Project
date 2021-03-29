@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-				<h1><a class="navbar-brand" href="../home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="../home_manager.php">BTKIT <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -121,45 +121,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<fieldset class="step agileinfo w3ls_fancy_step">
 						<legend>Personal Info</legend>
 						<div class="abt-agile">
-							<div class="abt-agile-left">
-							</div>
-							<div class="abt-agile-right">
+                          <div class="abt-agile-left">
+                        </div>
+						<div class="abt-agile-right">
+							<?php
+									$ad=1;
+									$queryA = "SELECT * FROM Hostel_Manager WHERE Isadmin = '$ad'";
+									$resultA = mysqli_query($conn,$queryA);
+									$rowA = mysqli_fetch_assoc($resultA);
+									$adFname = $rowA['Fname'];
+									$adLname = $rowA['Lname'];
+									$adUname = $rowA['Username'];
+									$adMob = $rowA['Mob_no'];
+									
+							 ?>
+              <h3><?php echo $adFname." ".$adLname; ?></h3>
 
-								<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+							
 								<h5>Hostel Manager</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Username </b></li>
-											<li>: <?php echo $_SESSION['username']; ?></li>
+											<li>: <?php echo $adUname; ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
-											<li><b>PHONE </b></li>
-											<li>: <?php echo $_SESSION['mob_no']; ?></li>
+											<li><b>PHONE </b></li> <li>
+											<li>: <?php echo $adMob; ?></li>
 										</ul>
 									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Email </b></li>
-											<li>: <?php echo $_SESSION['email']; ?></li>
-										</ul>
-									</li>
+									
                   <li>
 										<ul class="address-text">
 											<li><b>Managing Hostel </b></li>
-                      <?php
-                          $HOID = $_SESSION['hostel_id'];
-                          $query999 = "SELECT * FROM Hostel WHERE Hostel_id = '$HOID'";
-                          $result999 = mysqli_query($conn,$query999);
-                          $row999 = mysqli_fetch_assoc($result999);
-                          $HNM = $row999['Hostel_name'];
-                          if(!$HNM){
-                            $HNM='None';
-                          }
-                       ?>
-											<li>: <?php echo $HNM; ?></li>
 										</ul>
 									</li>
 								</ul>
@@ -183,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									$adLname = $rowA['Lname'];
 									$adUname = $rowA['Username'];
 									$adMob = $rowA['Mob_no'];
-									$adEmail = $rowA['Email'];
+									
 							 ?>
               <h3><?php echo $adFname." ".$adLname; ?></h3>
               <h5>Admin</h5>
@@ -198,12 +194,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <ul class="address-text">
                     <li><b>PHONE </b></li>
                     <li>: <?php echo $adMob; ?></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul class="address-text">
-                    <li><b>Email </b></li>
-                    <li>: <?php echo $adEmail; ?></li>
                   </ul>
                 </li>
                 

@@ -41,7 +41,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="index.html">BTKIT <span class="display"> DWARAHAT</span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -49,13 +49,13 @@
 				<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="about.php">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="services.html">Services</a>
+							<a class="nav-link" href="services.php">Services</a>
 						</li>
 						<li class="dropdown nav-item active">
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Pages
@@ -63,18 +63,18 @@
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
 								<li>
-									<a href="error.html">Error Page</a>
+									<a href="error.php">Error Page</a>
 								</li>
 								<li>
-									<a href="single.html">Single Page</a>
+									<a href="single.php">Single Page</a>
 								</li>
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="projects.html">Projects</a>
+							<a class="nav-link" href="projects.php">Projects</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact</a>
+							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 					</ul>
 				</div>
@@ -100,14 +100,13 @@
 						</div>
 						<div class="blog_info">
 							<h5>
-								<a href="single.html">Sadipisci velit sed quia non nuuam.</a>
+								<a href="single.php">Student of BTKIT.</a>
 							</h5>
 							<p>By
-								<a href="#" class="user-blog">Laura Paul</a>
+								<a href="#" class="user-blog">Manisha Singh</a>
 							</p>
-
-							<p>Pellentesque eleifend ultricies tellus,varius risus, id dignissim sapien velit id felis ac cursus ac eros.Pellentesque
-								eleifend ultricies tellus,varius risus, sapien velit id felis ac id dignissim sapien velit id felis ac cursus eros. sapien velit id felis ac eleifend ultricies tellus,varius risus. </p>
+							<p>In the city of Dwarahat, Bipin Tripathi Kumaon Institute of Technology, formerly Kumaon Engineering College,
+							 is an autonomous engineering and technology institute in the Almora district in state of Uttarakhand, India.</p>
 							<ul class="blog_list">
 								<li>
 									<a href="#">
@@ -136,7 +135,7 @@
 						<div class="media mb-3">
 							<img src="web_home/images/t1.jpg" alt="" class="img-fluid">
 							<div class="media-body">
-								<h5 class="mt-0">Joseph Goh</h5>
+								<h5 class="mt-0">Manisha Singh</h5>
 								<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
 									Cras a ornare elit.</p>
 							</div>
@@ -144,7 +143,7 @@
 						<div class="media">
 							<img src="web_home/images/t2.jpg" alt="" class="img-fluid">
 							<div class="media-body">
-								<h5 class="mt-0">Richard Spark</h5>
+								<h5 class="mt-0">Nisha Singh</h5>
 								<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
 									Cras a ornare elit.</p>
 							</div>
@@ -214,7 +213,7 @@
 							<div class="blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+									<a href="single.php">Pellentesque dui, non felis. Maecenas male</a>
 								</h5>
 							</div>
 							<div class="clearfix"> </div>
@@ -228,7 +227,7 @@
 							<div class="blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+									<a href="single.php">Pellentesque dui, non felis. Maecenas male</a>
 								</h5>
 							</div>
 							<div class="clearfix"> </div>
@@ -242,7 +241,7 @@
 							<div class="blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+									<a href="single.php">Pellentesque dui, non felis. Maecenas male</a>
 								</h5>
 							</div>
 							<div class="clearfix"> </div>
@@ -270,7 +269,7 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+			<a class="navbar-brand" href="index.php">BTKIT <span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			<div class="social mb-4 text-center">
@@ -285,24 +284,24 @@
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
+						<a href="services.php">Services</a>
 					</li>
 					<li>
-						<a href="projects.html">Gallery</a>
+						<a href="projects.php">Gallery</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</div>
 			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+				<p>© 2020 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
 		</div>
 		</div>
 	</div>

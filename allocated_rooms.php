@@ -48,7 +48,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home_manager.php">BTKIT<span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -84,16 +84,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+							<li class="nav-item">
+								<a  class="nav-link" href="admin/manager_profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a  class="nav-link" href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -232,7 +227,7 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="https://kecua.ac.in/" target="_blank">BTKIT<span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			<div class="list-footer">

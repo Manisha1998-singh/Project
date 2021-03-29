@@ -1,7 +1,7 @@
 
 <?php
 
-require 'includes/signup.inc.php';
+require 'includes/config.inc.php';
 ?>
 
 <!DOCTYPE html>

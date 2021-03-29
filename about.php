@@ -1,9 +1,4 @@
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,15 +182,20 @@
 		<h3 class="heading text-capitalize mb-5"> History of us</h3>
 		<div class="row bottom-grids">
 			<div class="col-lg-4 bottom-grid1">
-				<h3 class="mb-2">Future Of Interior</h3>
+				<h3 class="mb-2">BTKIT HOSTELS</h3>
 				<h3> Architecture</h3>
-				<p class=""> Phasellus iaculis sapien in tellus gravida, lorem placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sed sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestib ulum consectetur.</p> 
+				<p class="">The Institute offers several other infrastructural facilities for faculty and students, such as hostels, staff residential campus, departmental buildings, student's activity club and a multipurpose hall have been developed. An atmosphere conducive to learning and all-round personality development of the students is being created. Emphasis is being laid on self discipline & mutual respect.</p> 
 			</div>
 			<div class="col-lg-4 text-center bottom-grid2">
-				<h4>INTREND</h4>
+				<h4>HOSTELS</h4>
 			</div>
 			<div class="col-lg-4 bottom-grid1">
-				<p class="mb-4"> Phasellus iaculis sapien in tellus gravida, lorem placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sed sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestib ulum consectetur.</p> 
+				<p class="mb-4"> <h5><b> Address: Dwarahat, Almora, Uttarakhand</b></h5> <br>
+
+				<h5><b>  Email: director@kecua.ac.in</b></h5><br>
+                <h5><b>  Website: www.kecua.ac.in </b></h5><br>
+                <h5><b>      Phone: 05966-244250 </b></h5><br>
+                 <h5><b>     Fax: 05966-244114. </b></h5></p> 
 				<a href="#">Read More</a>
 			</div>
 		</div>
@@ -207,13 +207,13 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+			<a class="navbar-brand" href="index.php">BTKIT<span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			<div class="social mb-4 text-center">
 				<ul class="d-flex justify-content-center">
 					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
+					<li class="mx-2"><a href="https://twitter.com/AnishaS35004818"><span class="fab fa-twitter"></span></a></li>
 					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
 					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
 					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
@@ -222,24 +222,24 @@
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
+						<a href="services.php">Services</a>
 					</li>
 					<li>
-						<a href="projects.html">Gallery</a>
+						<a href="projects.php">Gallery</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</div>
 			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2020 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+				<p>© 2020  All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> Manisha Singh </a></p>
 		</div>
 		</div>
 	</div>

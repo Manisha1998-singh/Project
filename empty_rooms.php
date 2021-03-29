@@ -7,6 +7,41 @@
 <html lang="en">
 <head>
 <title> Empty Rooms</title>
+<style> 
+        table, th, td { 
+            border: 4px solid black; 
+            border-collapse: collapse; 
+        } 
+          
+        th, td { 
+            padding: 5px; 
+            text-align: left; 
+        } 
+
+		th { 
+            background-color: #000000;
+			
+        }
+
+		td { 
+            font-weight: bold;
+			color: black;
+        }  
+
+		h2 { 
+            font-weight: bold;
+			color: black;
+        }  
+          
+        .center {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%; 
+            background-color: #F5F5F5; 
+			align: center;
+           } 
+    </style> 
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +83,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home_manager.php">BTKIT<span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -83,16 +118,12 @@
 					<li class="nav-item">
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+					
+							<li class="nav-item">
+								<a  class="nav-link" href="admin/manager_profile.php">My Profile</a>
 							</li>
-							<li>
-								<a href="includes/logout.inc.php">Logout</a>
+							<li class="nav-item">
+								<a class="nav-link"  href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -122,84 +153,44 @@
 			</div>
 	</div>
 </section>
-<?php
-   if (isset($_POST['search'])) {
-   	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
-   	   $hostel_id = $_SESSION['hostel_id'];
-   	   $query_search = "SELECT * FROM Room WHERE Room_No like '$search_box%' and Hostel_id = '$hostel_id' and Allocated = '0'";
-   	   $result_search = mysqli_query($conn,$query_search);
-
-   	   //select the hostel name from hostel table
-       $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-   	   ?>
-   	   <div class="container">
-   	   <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Hostel Name</th>
-        <th>Room Number</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-   	   if(mysqli_num_rows($result_search)==0){
-   	   	  echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-   	   }
-   	   else{
-   	   	  while($row_search = mysqli_fetch_assoc($result_search)){
-         
-      		echo "<tr><td>{$hostel_name}</td><td>{$row_search['Room_No']}</td></tr>\n";
-   	   }
-   }
-   ?>
-   </tbody>
-  </table>
-</div>
-<?php
-}
-  ?>
-
 
 <div class="container">
-<h2 class="heading text-capitalize mb-sm-5 mb-4"> Empty Rooms </h2>
-<?php
-   $hostel_id = $_SESSION['hostel_id'];
-   $query1 = "SELECT * FROM Room where Hostel_id = '$hostel_id' and Allocated = '0'";
-   $result1 = mysqli_query($conn,$query1);
-   //select the hostel name from hostel table
-   $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-   $result6 = mysqli_query($conn,$query6);
-   $row6 = mysqli_fetch_assoc($result6);
-   $hostel_name = $row6['Hostel_name'];
 
+<h2 style="text-align:center; font-weight: bold;"> Empty Rooms </h2><br>
 
-?>
-        
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Hostel Name</th>
-        <th>Room Number</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-      if(mysqli_num_rows($result1)==0){
-         echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-      }
-      else{
-      	while($row1 = mysqli_fetch_assoc($result1)){
-      		echo "<tr><td>{$hostel_name}</td><td>{$row1['Room_No']}</td></tr>\n";
-      	}
-      }
-    ?>
-    </tbody>
-  </table>
-</div>
+<table class="center">
+  <thead>
+	<tr>
+	  <th style="color:White;">Hostel  ID</th> 
+	  <th style="color:White;">Hostel Name</th>
+	  <th style="color:White;">Current Rooms</th>
+	  <th style="color:White;">Total Rooms</th>
+	  <th style="color:White;">Student</th>
+	 
+	  
+	</tr>
+  </thead>
+  <tbody>
+  <?php
+			
+			
+		  $sql = "SELECT  Hostel_id, Hostel_name, current_no_of_rooms, No_of_rooms, No_of_students FROM  hostel";
+		  $result = mysqli_query($conn,$sql);
+		  
+		  if($result->num_rows > 0){
+			  while($row = $result -> fetch_assoc()){
+				  echo "<tr><td>". $row["Hostel_id"] ."</td><td>". $row["Hostel_name"] ."</td><td>". $row["current_no_of_rooms"]."</td><td>". $row["No_of_rooms"] ."</td><td>". $row["No_of_students"] ."</td></tr>\n";
+				
+			  }
+			  echo "</table>";
+		  }
+		
+  ?>
+  </tbody>
+</table>
+</div> 
+       
+  
 <br>
 <br>
 <br>
@@ -208,7 +199,7 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="https://kecua.ac.in/" target="_blank">BTKIT <span class="display"> DWARAHAT</span></a>
 		</div>
 		<div class="footer-grid">
 			<div class="list-footer">
@@ -294,4 +285,3 @@
 
 </body>
 </html>
-
